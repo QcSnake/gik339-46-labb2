@@ -1,5 +1,5 @@
 const express = require("express");
-const sqlite3 = require("sqlite3").verbose();
+const sqlite3 = require("sqlite3").verbose(); // 3
 
 const server = express();
 
@@ -13,7 +13,7 @@ server
     next();
   });
 
-const db = new sqlite3.Database("./gik339-labb2.db");
+const db = new sqlite3.Database("./gik339-labb2.db"); // 3
 const sql = "SELECT * FROM USERS";
 
 server.get("/users", (req, res) => {
@@ -24,7 +24,7 @@ server.get("/users", (req, res) => {
     }
     res.send(rows);
   });
-});
+}); //3
 
 const PORT = 3000;
 server.listen(PORT, () => {
